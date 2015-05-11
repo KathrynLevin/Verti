@@ -1,0 +1,37 @@
+﻿Rachel Kraft
+Kathryn Levin 
+Andrew Lipman
+Pseudocode for Problem H (Verti-Words)
+
+
+initialize each line as a string array and put in an array of string arrays
+initialize how many sets of lines are possible
+initialize unsigned int representing the best shifting configuration (wwwbbbbttll)
+initialize an int array of length of word with b values in it
+for each line (string array){
+starting at the first string array find first letter of the word we want to find 
+increase desired letter and line 
+continue until desired letter is not found or word is complete
+if word complete{
+                record that this set of lines is viable
+        shifting/best shift method(); (see below)
+}
+else{
+                record that this set of lines is not viable
+        restart this at one line below what we started at originally
+}
+}
+
+
+returns the best shifting option (meaning that you implement and print it)
+
+
+how much shifting/best shift method():
+
+
+for (each line in this set of lines){
+        find all instances of the letter that goes on this long and make it into a “letter” struct that contains  a char “c”, an int “x” for x position in array
+        put these into a 2D array so that for each line we have how many instances of the character we are looking for are there
+}
+use the 2D array we created to recursively go through and test all combinations of letters and how much their shifting costs
+if it’s better than the current best, replace current best
